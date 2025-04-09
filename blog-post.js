@@ -61,10 +61,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (categoryElement) categoryElement.textContent = category;
         if (contentElement) contentElement.innerHTML = htmlContent;
 
-        // Atualizando a imagem do post (se houver)
+        // Atualizar a imagem, mas só se o campo 'image' contiver um valor válido
         const postImageElement = document.getElementById("post-image");
-        if (image && postImageElement) {
+        if (image && image.trim() !== "") {
           postImageElement.src = image;
+        } else {
+          // Caso não haja uma imagem válida, ocultar a seção da imagem
+          const postImageContainer = postImageElement.closest('.post-image');
+          if (postImageContainer) {
+            postImageContainer.style.display = 'none';
+          }
         }
 
       })
