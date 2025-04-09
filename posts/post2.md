@@ -3,7 +3,7 @@ title: "HTB Write-up: Jeeves"
 date: "2025-04-09"
 author: "Bruno Lamela"
 category: "Hack The Box Easy"
-image: "./img/2.jpg"
+image: "https://brunolamela47.github.io/myblog/img/2.jpg"
 
 ---
   
