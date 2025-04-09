@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Post ID extraído da URL:", postId);
 
   if (postId) {
-    fetch(`posts/${postId}.md`)
+    fetch(`https://brunolamela47.github.io/myblog/posts/${postId}.md`)
       .then(response => {
         if (!response.ok) {
           console.error("Falha ao carregar o arquivo Markdown");
