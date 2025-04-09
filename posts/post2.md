@@ -1,5 +1,4 @@
 ---
-url: "./img/1.jpeg"
 title: "HTB Write-up: Jeeves"
 date: "2025-04-09"
 author: "Bruno Lamela"
