@@ -4,14 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Post ID extraído da URL:", postId);
 
   if (postId) {
-    fetch(`https://brunolamela47.github.io/myblog/posts/${postId}.md`)
-        .then(response => {
+    // Carregar o arquivo Markdown do repositório GitHub Pages (garanta que o caminho está correto)
+    fetch(`./posts/${postId}.md`)
+      .then(response => {
         if (!response.ok) {
           throw new Error("Falha ao carregar o arquivo Markdown");
         }
         return response.text();
       })
       .then(markdown => {
+        // Regex para extrair o front matter corretamente
         const frontMatterRegex = /^---\s*\n([\s\S]+?)\n\s*---/;
         const match = markdown.match(frontMatterRegex);
 
@@ -39,12 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           });
 
+          // Remover o front matter do conteúdo
           contentWithoutFrontMatter = markdown.replace(frontMatterRegex, '');
         }
 
+        // Converter Markdown para HTML
         const htmlContent = marked.parse(contentWithoutFrontMatter);
 
-        // Verifique se o elemento existe antes de manipulá-lo
+        // Atualizar os elementos na página com os dados extraídos
         const titleElement = document.getElementById("post-title");
         const dateElement = document.getElementById("post-date");
         const authorElement = document.getElementById("post-author");
