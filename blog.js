@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Função para carregar os posts
   function loadPosts() {
-    fetch('/posts/index.json')  // URL para o arquivo JSON
+    fetch('https://brunolamela47.github.io/myblog/posts/index.json')  // URL para o arquivo JSON
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao carregar os posts');
