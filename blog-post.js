@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let date = "Data desconhecida";
         let author = "Autor desconhecido";
         let category = "Categoria desconhecida";
-        let image = ""; // Variável para armazenar a URL da imagem
+        let image = "";  // Adicionando a variável para imagem
         let contentWithoutFrontMatter = markdown;
 
         if (match) {
@@ -36,19 +36,19 @@ document.addEventListener("DOMContentLoaded", () => {
           frontMatterLines.forEach(line => {
             console.log("Linha do front matter:", line);
             if (line.startsWith('title:')) {
-              title = line.replace('title:', '').trim();
+              title = line.replace('title:', '').trim().replace(/"/g, ''); // Remover aspas
               console.log("Título extraído:", title);
             } else if (line.startsWith('date:')) {
-              date = line.replace('date:', '').trim();
+              date = line.replace('date:', '').trim().replace(/"/g, ''); // Remover aspas
               console.log("Data extraída:", date);
             } else if (line.startsWith('author:')) {
-              author = line.replace('author:', '').trim();
+              author = line.replace('author:', '').trim().replace(/"/g, ''); // Remover aspas
               console.log("Autor extraído:", author);
             } else if (line.startsWith('category:')) {
-              category = line.replace('category:', '').trim();
+              category = line.replace('category:', '').trim().replace(/"/g, ''); // Remover aspas
               console.log("Categoria extraída:", category);
-            } else if (line.startsWith('image:')) { // Adicionando a extração da imagem
-              image = line.replace('image:', '').trim();
+            } else if (line.startsWith('image:')) {
+              image = line.replace('image:', '').trim().replace(/"/g, ''); // Remover aspas
               console.log("Imagem extraída:", image);
             }
           });
@@ -71,19 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("post-category").textContent = category;
         document.getElementById("post-content").innerHTML = htmlContent;
 
-        // Se a URL da imagem for fornecida, exiba a imagem na div post-image
-        if (image) {
-          const imageElement = document.createElement("img");
-          imageElement.src = image;
-          imageElement.alt = title; // Definir um texto alternativo para a imagem
-          imageElement.id = "post-image"; // Defina o ID para a imagem
-          
-          // Encontrar a div .post-image e substituir seu conteúdo pela imagem
-          const postImageDiv = document.querySelector('.post-image');
-          if (postImageDiv) {
-            postImageDiv.innerHTML = '';  // Limpar qualquer conteúdo existente
-            postImageDiv.appendChild(imageElement); // Adicionar a imagem à div
-          }
+        // Atualizando a imagem do post (se houver)
+        const postImageElement = document.getElementById("post-image");
+        if (image && postImageElement) {
+          postImageElement.src = image;
         }
 
       })
