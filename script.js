@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Load blog posts dynamically from index.json
-  fetch('posts/index.json')
+  fetch('https://brunolamela47.github.io/myblog/posts/index.json')
     .then(response => response.json())
     .then(data => {
       // Acessando corretamente os posts
