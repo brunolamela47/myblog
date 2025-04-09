@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (postId) {
     // Carregar o arquivo Markdown do repositório GitHub Pages (garanta que o caminho está correto)
-    fetch(`./posts/${postId}.md`)
+    fetch(`https://raw.githubusercontent.com/brunolamela47/myblog/refs/heads/main/posts/${postId}.md`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Falha ao carregar o arquivo Markdown");
