@@ -1,20 +1,11 @@
 ---
 url: ./img/1.jpeg
-title: HTB Write-up: Jeeves 
+title: HTB Write-up: Jeeves
 date: 2025-04-09
 author: Bruno Lamela
 category: Hack The Box Easy
 image: ./img/2.jpg
 ---
-
-<br><br>
-
-
-  
-
-
-  
-
 
 ## Jeeves - Privilege Escalation
 
@@ -40,12 +31,3 @@ O primeiro passo é descobrir os serviços e portas abertas. Para isso, usamos u
 
 ```bash
 nmap -sC -sV -oN nmap.txt 10.10.10.60
-
-```
-![Resultado do Nmap](./img/1.jpeg)
-
-
-
-
-
-
