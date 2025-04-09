@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - Bruno Lamela</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h1>Bruno Lamela</h1>
+                </div>
+                <nav class="desktop-nav">
+                    <a href="index.html">Home</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About</a>
+                </nav>
+                <div class="right-nav">
+                    <button id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Blog Post Content -->
+        <article class="blog-post">
+            <div class="container">
+                <a href="blog.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to all articles
+                </a>
+
+                <div class="post-image">
+                    <img src="https://placehold.co/800x400" alt="Blog Post" id="post-image">
+                </div>
+
+                <h1 id="post-title">Loading...</h1>
+
+                <div class="post-meta">
+                    <div class="meta-item">
+                        <i class="fa-solid fa-calendar"></i>
+                        <span id="post-date">Loading...</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fa-solid fa-user"></i>
+                        <span id="post-author">Loading...</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fa-solid fa-tag"></i>
+                        <span id="post-category">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="post-content" id="post-content">
+                    <p>Loading...</p>
+                </div>
+
+                <div class="post-share">
+                    <h3>Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?url=https://teusite.com/post1&text=HTB Write-up: Jeeves" class="share-btn twitter" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://teusite.com/post1" class="share-btn facebook" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://teusite.com/post1&title=HTB Write-up: Jeeves" class="share-btn linkedin" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:?subject=HTB Write-up: Jeeves&body=Veja este artigo: https://teusite.com/post1" class="share-btn email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Bruno Lamela</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="about.html">About</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year"></span> Bruno Lamela. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Import marked.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.7/marked.min.js"></script>
+    <!-- Import gray-matter.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.min.js"></script>
+
+
+    <!-- Your custom script -->
+    <script src="script.js"></script>
+    <script src="blog-post.js"></script>
+</body>
+</html>

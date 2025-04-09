@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Lamela - Cybersecurity Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h1>Bruno Lamela</h1>
+                </div>
+                <nav class="desktop-nav">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About</a>
+                </nav>
+                <div class="right-nav">
+                    <button id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h3>Welcome to My Blog</h3>
+                <p>Here you'll find detailed solutions and insights from Hack The Box and TryHackMe challenges, designed to help you sharpen your ethical hacking skills.</p>
+                <div class="cta-buttons">
+                    <a href="blog.html" class="btn btn-primary">
+                        Read Articles
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="about.html" class="btn btn-secondary">About Me</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Posts -->
+        <section class="recent-posts">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Recent Articles</h2>
+                    <a href="blog.html" class="view-all">
+                        View all
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="blog-grid" id="blog-grid">
+                    <!-- Blog Cards will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Bruno Lamela</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="about.html">About</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year"></span> Bruno Lamela. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>
