@@ -1,21 +1,33 @@
-# HTB Write-up: "Jeeves" - A Privilege Escalation Challenge
+---
+url: "./img/1.jpeg"
+title: "HTB Write-up: Jeeves"
+date: "2025-04-09"
+author: "Bruno Lamela"
+category: "Hack The Box Easy"
+image: "./img/2.jpg"
+---
+  
+## Jeeves - Privilege Escalation
 
-## Descrição
+A máquina **Jeeves** no **Hack The Box (HTB)** oferece um desafio de **escalonamento de privilégios**, com o objetivo de obter acesso como root a partir de uma conta de usuário regular. Neste write-up, documentarei o processo completo de exploração da máquina.
 
-A máquina "Jeeves" no Hack The Box (HTB) oferece um desafio interessante de escalonamento de privilégios, onde o objetivo é obter acesso como root a partir de uma conta de usuário regular. Ao longo deste write-up, vou documentar o processo completo de exploração da máquina, desde a enumeração inicial até a escalada de privilégios e obtenção de uma shell root.
-
-**Dificuldade**: Médio  
-**Tipo**: Linux  
-**Status**: Concluído
+---
 
 ## Informações da Máquina
 
-- **IP da máquina**: 10.10.10.60
-- **Sistema Operacional**: Ubuntu 20.04
+- **IP**: `10.10.10.60`
+- **SO**: Ubuntu 20.04
+- **Dificuldade**: Médio
+- **Tipo**: Linux
+- **Status**: Concluído
 
-## 1. Descobrindo a Máquina
+---
 
-Começamos realizando um `nmap` para identificar as portas abertas e os serviços em execução na máquina.
+## 1. Descoberta da Máquina
+
+O primeiro passo é descobrir os serviços e portas abertas. Para isso, usamos um **scan Nmap** completo.
+
+### Comando Nmap
 
 ```bash
 nmap -sC -sV -oN nmap.txt 10.10.10.60
