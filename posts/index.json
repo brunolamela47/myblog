@@ -1,20 +1,12 @@
 {
   "posts": [
     {
-      "url": "./img/1.jpeg",
-      "title": "Post 1",
-      "date": "2025-04-09",
-      "description": "Description for Post 1.",
-      "category": "htb",
-      "file": "post1.md"
-    },
-    {
-      "url": "./img/1.jpeg",
-      "title": "Post 2",
-      "date": "2025-04-08",
-      "description": "Description for Post 2.",
-      "category": "thm",
-      "file": "post2.md"
+      "url": "",
+      "title": "",
+      "date": "",
+      "description": "",
+      "category": "",
+      "file": ""
     }
   ],
   "totalPages": 4
