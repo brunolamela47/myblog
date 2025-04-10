@@ -69,20 +69,47 @@
                 <div class="post-share">
                     <h3>Share this article</h3>
                     <div class="share-buttons">
-                        <a href="https://twitter.com/intent/tweet?url=https://teusite.com/post1&text=HTB Write-up: Jeeves" class="share-btn twitter" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://teusite.com/post1" class="share-btn facebook" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://teusite.com/post1&title=HTB Write-up: Jeeves" class="share-btn linkedin" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="mailto:?subject=HTB Write-up: Jeeves&body=Veja este artigo: https://teusite.com/post1" class="share-btn email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        
-                    </div>
+                    <a href="#" id="twitter-share" class="share-btn twitter" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" id="facebook-share" class="share-btn facebook" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" id="linkedin-share" class="share-btn linkedin" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" id="email-share" class="share-btn email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <script>
+                  // Função que vai obter o ID do post a partir da URL
+                  function getPostIdFromUrl() {
+                    const params = new URLSearchParams(window.location.search);
+                    return params.get("id");
+                  }
+                
+                  // Atualizar os links de compartilhamento com o postId
+                  document.addEventListener("DOMContentLoaded", () => {
+                    const postId = getPostIdFromUrl();  // Obtém o postId da URL da página
+                    const baseUrl = `https://brunolamela47.github.io/myblog/blog-post.html?id=${postId}`;  // URL base do post
+                
+                    if (postId) {
+                      // Atualizando os links de compartilhamento com o postId
+                      const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(baseUrl)}&text=HTB Write-up: Jeeves`;
+                      const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseUrl)}`;
+                      const linkedinLink = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(baseUrl)}&title=HTB Write-up: Jeeves`;
+                      const emailLink = `mailto:?subject=HTB Write-up: Jeeves&body=Veja este artigo: ${encodeURIComponent(baseUrl)}`;
+                
+                      // Atualizando os hrefs dos links de compartilhamento
+                      document.getElementById("twitter-share").href = twitterLink;
+                      document.getElementById("facebook-share").href = facebookLink;
+                      document.getElementById("linkedin-share").href = linkedinLink;
+                      document.getElementById("email-share").href = emailLink;
+                    }
+                  });
+                </script>
                 </div>
             </div>
         </article>
