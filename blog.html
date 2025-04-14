@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Bruno Lamela</title>
+    <title>Blog - Cyber Blog</title>
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="logo">
                     <i class="fa-solid fa-shield-halved"></i>
-                    <h1>Bruno Lamela</h1>
+                    <h1>Cyber Blog</h1>
                 </div>
                 <nav class="desktop-nav">
                     <a href="index.html">Home</a>
@@ -30,6 +30,13 @@
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
+            </div>
+            <div id="mobile-menu" class="mobile-nav hidden">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About</a>
+                </nav>
             </div>
         </header>
 
@@ -76,132 +83,7 @@
         <section class="blog-posts">
             <div class="container">
                 <div class="blog-grid">
-                    <div class="blog-card" data-category="malware">
-                        <div class="blog-image">
-                            <img src="https://placehold.co/400x200" alt="Ransomware Trends">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">April 5, 2025</div>
-                            <h3>Ransomware Trends in 2025</h3>
-                            <p>Analyzing the latest ransomware attack vectors and defense strategies.</p>
-                            <a href="blog-post.html?id=ransomware-trends-2025" class="read-more">
-                                Read more
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-card" data-category="network">
-                        <div class="blog-image">
-                            <img src="https://placehold.co/400x200" alt="Zero Trust Architecture">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">March 28, 2025</div>
-                            <h3>Zero Trust Architecture Explained</h3>
-                            <p>A comprehensive guide to implementing zero trust security models.</p>
-                            <a href="blog-post.html?id=zero-trust-architecture" class="read-more">
-                                Read more
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-card" data-category="privacy">
-                        <div class="blog-image">
-                            <img src="https://placehold.co/400x200" alt="Securing IoT Devices">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">March 15, 2025</div>
-                            <h3>Securing IoT Devices</h3>
-                            <p>Best practices for protecting your connected devices from cyber threats.</p>
-                            <a href="blog-post.html?id=securing-iot-devices" class="read-more">
-                                Read more
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-card" data-category="malware">
-                        <div class="blog-image">
-                            <img src="https://placehold.co/400x200" alt="AI-Powered Attacks">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">March 10, 2025</div>
-                            <h3>The Rise of AI-Powered Attacks</h3>
-                            <p>How artificial intelligence is changing the cybersecurity landscape.</p>
-                            <a href="blog-post.html?id=ai-powered-attacks" class="read-more">
-                                Read more
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-card" data-category="tutorials">
-                        <div class="blog-image">
-                            <img src="https://placehold.co/400x200" alt="Secure Coding Practices">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">February 28, 2025</div>
-                            <h3>Secure Coding Practices</h3>
-                            <p>Essential security principles every developer should follow.</p>
-                            <a href="blog-post.html?id=secure-coding-practices" class="read-more">
-                                Read more
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-card" data-category="ethical-hacking">
-                        <div class="blog-image">
-                            <img src="https://placehold.co/400x200" alt="Social Engineering Tactics">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">February 15, 2025</div>
-                            <h3>Social Engineering Tactics</h3>
-                            <p>Understanding and defending against human-focused attack methods.</p>
-                            <a href="blog-post.html?id=social-engineering-tactics" class="read-more">
-                                Read more
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-card" data-category="network">
-                        <div class="blog-image">
-                            <img src="https://placehold.co/400x200" alt="Cloud Security Best Practices">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">February 5, 2025</div>
-                            <h3>Cloud Security Best Practices</h3>
-                            <p>Protecting your data and applications in cloud environments.</p>
-                            <a href="blog-post.html?id=cloud-security-best-practices" class="read-more">
-                                Read more
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-card" data-category="privacy">
-                        <div class="blog-image">
-                            <img src="https://placehold.co/400x200" alt="Mobile Device Security">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">January 25, 2025</div>
-                            <h3>Mobile Device Security</h3>
-                            <p>Keeping your smartphones and tablets safe from cyber threats.</p>
-                            <a href="blog-post.html?id=mobile-device-security" class="read-more">
-                                Read more
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-card" data-category="tutorials">
-                        <div class="blog-image">
-                            <img src="https://placehold.co/400x200" alt="Cryptography Fundamentals">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">January 10, 2025</div>
-                            <h3>Cryptography Fundamentals</h3>
-                            <p>An introduction to encryption, hashing, and digital signatures.</p>
-                            <a href="blog-post.html?id=cryptography-fundamentals" class="read-more">
-                                Read more
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -225,7 +107,7 @@
                 <div class="footer-content">
                     <div class="footer-logo">
                         <i class="fa-solid fa-shield-halved"></i>
-                        <span>Bruno Lamela</span>
+                        <span>Cyber Blog</span>
                     </div>
                     <div class="footer-links">
                         <a href="index.html">Home</a>
@@ -234,7 +116,7 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; <span id="current-year"></span> Bruno Lamela. All rights reserved.</p>
+                    <p>&copy; <span id="current-year"></span> Cyber Blog. All rights reserved.</p>
                 </div>
             </div>
         </footer>
