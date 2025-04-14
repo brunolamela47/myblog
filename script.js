@@ -29,12 +29,30 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Mobile menu toggle
-  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-  const mobileMenu = document.querySelector(".mobile-menu");
+  
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+  
+    // Verifica se os elementos existem antes de adicionar o evento
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+        // Hides the main body content when the mobile menu is opened for better UX
+        document.body.style.overflow = mobileMenu.classList.contains("active") ? "hidden" : "auto";
+      });
+    } else {
+      console.error("Botão ou menu não encontrados!");
+    }
+  
+    // Close mobile menu when clicking outside
+    document.addEventListener("click", (event) => {
+      if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "auto"; // Restore body scroll when menu is closed
+      }
+    });
+ 
 
-  mobileMenuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-  });
 
   // Close mobile menu when clicking outside
   document.addEventListener("click", (event) => {
