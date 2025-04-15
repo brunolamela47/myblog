@@ -40,7 +40,7 @@ The first step is to discover open services and ports. For this we use a **Nmap 
 nmap -sC -sV -p- -v 10.10.11.100
 
 ```
-![Resultado do Nmap](./img/nmap_bounty_hunter.png)
+![Resultado do Nmap](./img/Bounty_Hunter/nmap_bounty_hunter.png)
 
 
 
