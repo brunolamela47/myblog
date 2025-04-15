@@ -1,9 +1,8 @@
 ---
-url: ./img/1.jpeg
-title: HTB Write-up: Bounty Hunter 
-date: 2025-04-15
-author: Bruno Lamela
-category: Hack The Box Easy
+title: "HTB Write-up: Bounty Hunter" 
+date: "2025-04-15"
+author: "Bruno Lamela"
+category: "Hack The Box Easy"
 image: ./img/2.jpg
 ---
 
