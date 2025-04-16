@@ -276,12 +276,12 @@ header .container {
   }
 }
 
-@media (max-width: 767px) {
-  body, h1, h2, h3, h4, h5, h6, p {
-    word-wrap: break-word;
-    hyphens: auto;
-  }
-}
+ @media (max-width: 767px) {
+        .post-content {
+            word-wrap: break-word;
+            word-break: break-word;
+        }
+    }
 
 /* Add your other sections like hero, features, blog, about, contact, etc. */
 
