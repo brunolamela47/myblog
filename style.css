@@ -276,12 +276,14 @@ header .container {
   }
 }
 
- @media (max-width: 767px) {
-        .post-content {
-            word-wrap: break-word;
-            word-break: break-word;
-        }
+@media (max-width: 767px) {
+    pre, code {
+        word-wrap: break-word;
+        word-break: break-all; 
+        overflow-wrap: break-word;
     }
+}
+
 
 /* Add your other sections like hero, features, blog, about, contact, etc. */
 
