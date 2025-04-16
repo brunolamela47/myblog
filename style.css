@@ -275,6 +275,14 @@ header .container {
       gap: 1rem;
   }
 }
+
+@media (max-width: 767px) {
+  body, h1, h2, h3, h4, h5, h6, p {
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
 /* Add your other sections like hero, features, blog, about, contact, etc. */
 
 
