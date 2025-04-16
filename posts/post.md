@@ -36,6 +36,7 @@ nmap -sC -sV -p- -v 10.10.11.100
 
 ```
 <br>
+
 ![Resultado do Nmap](./img/Bounty_Hunter/nmap_bounty_hunter.png)
 
 
@@ -45,7 +46,7 @@ After identifying that port **80** was open from the Nmap scan, we navigated to 
 
 ![Portal Page](./img/Bounty_Hunter/xxe_page.png)
 
-<br>
+
 ---
 
 ### 🌐 Web Exploration
@@ -58,7 +59,7 @@ While exploring the site, we discovered the following path:
 
 > 🧪 **Bounty Report System - Beta**
 
-<br>
+
 ---
 
 ### 📝 Bug Bounty Form Structure
