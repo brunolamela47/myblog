@@ -35,6 +35,7 @@ The first step is to discover open services and ports. For this we use a **Nmap 
 nmap -sC -sV -p- -v 10.10.11.100
 
 ```
+<br>
 ![Resultado do Nmap](./img/Bounty_Hunter/nmap_bounty_hunter.png)
 
 
@@ -44,8 +45,9 @@ After identifying that port **80** was open from the Nmap scan, we navigated to 
 
 ![Portal Page](./img/Bounty_Hunter/xxe_page.png)
 
----
 <br>
+---
+
 ### 🌐 Web Exploration
 
 While exploring the site, we discovered the following path:
@@ -55,9 +57,10 @@ While exploring the site, we discovered the following path:
 - **`log_submit.php`** → Clicking the link led us here. This page contained a form labeled:
 
 > 🧪 **Bounty Report System - Beta**
+
 <br>
 ---
-<br>
+
 ### 📝 Bug Bounty Form Structure
 
 The form consisted of several text fields that looked like this:
@@ -80,13 +83,13 @@ We used the following command to scan the webserver:
 ```bash
 ffuf -u http://10.10.11.100/FUZZ -w /usr/share/wordlists/dirb/common.txt -e .php
 ```
-<br>
+
 This allowed us to brute-force directories and file names, particularly targeting `.php` files.
-
-
 <br>
+
+
 ### 📂 Discovery: `db.php`
-<br>
+
 During the scan, ffuf revealed a file named:
 
 > `db.php`
@@ -116,7 +119,7 @@ After confirming that the form on `log_submit.php` parsed user input as XML, we 
 
 🧪 First Payload – Reading /etc/passwd
 We submitted the following XML payload through Burp Suite (inside one of the text fields):
-<br>
+
 ---
 ```bash
 <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -131,6 +134,7 @@ We submitted the following XML payload through Burp Suite (inside one of the tex
 </exploit>
 ```
 ---
+
 <br>
 
 After decoding the response (which was Base64 + URL encoded), we retrieved the contents of /etc/passwd.
