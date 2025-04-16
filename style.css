@@ -278,10 +278,10 @@ header .container {
 
 @media (max-width: 767px) {
     pre, code {
-      white-space: pre-wrap;
-        word-wrap: break-word;
-        word-break: break-all; 
-        overflow-wrap: break-word;
+     white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
     }
 }
 
