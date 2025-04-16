@@ -86,12 +86,8 @@
         <a href="#" id="linkedin-share" class="share-btn linkedin" target="_blank">
             <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="#" id="email-share" class="share-btn email">
-            <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://www.instagram.com" id="instagram-share" class="share-btn instagram" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
+       
+      
     </div>
 </div>
 
@@ -112,17 +108,14 @@
       const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(baseUrl)}&text=HTB Write-up: Jeeves`;
       const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseUrl)}`;
       const linkedinLink = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(baseUrl)}&title=HTB Write-up: Jeeves`;
-      const emailLink = `mailto:?subject=HTB Write-up: Jeeves&body=Veja este artigo: ${encodeURIComponent(baseUrl)}`;
+     
 
       // Atualizando os hrefs dos links de compartilhamento
       document.getElementById("twitter-share").href = twitterLink;
       document.getElementById("facebook-share").href = facebookLink;
       document.getElementById("linkedin-share").href = linkedinLink;
-      document.getElementById("email-share").href = emailLink;
+    
 
-      // Para Instagram, fornecer o link do seu perfil ou algo específico
-      const instagramLink = `https://www.instagram.com`; // Você pode customizar para um link de post específico
-      document.getElementById("instagram-share").href = instagramLink;
     }
   });
 </script>
