@@ -1,12 +1,12 @@
 {
   "posts": [
     {
-      "url": "",
-      "title": "",
-      "date": "",
-      "description": "",
-      "category": "",
-      "file": ""
+      "url": "./img/bh.png",
+      "title": "Bounty Hunter",
+      "date": "2025-04-15",
+      "description": "Bounty Hunter machine form Hack The Box",
+      "category": "htb",
+      "file": "post.md"
     }
   ],
   "totalPages": 4
